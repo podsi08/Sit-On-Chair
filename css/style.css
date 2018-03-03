@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -85,33 +85,34 @@ nav a {
 
 .about .container {
     height: 350px;
+    position: relative;
+    top: 100px;
 }
 
 .arrow {
     color: #8aceb5;
     font-size: 80px;
-    width: 10%;
+    width: 5%;
     height: 100%;
     display: block;
     float: left;
-    border: 1px red solid;
     text-align: center;
+    padding-top: 110px;
 }
 
 .chair {
     background: url("../images/black_chair.png") no-repeat center/cover;
-    width: 35%;
+    width: 40%;
     height: 100%;
-    border: red 1px solid;
     float: left;
 }
 
 .about__description {
-    width: 45%;
+    width: 50%;
     height: 100%;
-    border: red 1px solid;
     float: left;
     padding-top: 50px;
+    position: relative;
 }
 
 .about__description h1 {
@@ -122,14 +123,17 @@ nav a {
 
 .about__description p {
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 .about__description .button {
     background-color: #8aceb5;
     border-radius: 20px;
     width: 300px;
+    margin-top: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left:-150px;
 }
 
 .about__description .button a {
