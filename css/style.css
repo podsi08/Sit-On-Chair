@@ -42,6 +42,7 @@ body {
 
 header {
     background-color: black;
+    width: 100%;
 }
 
 header .logo {
@@ -52,7 +53,7 @@ header .logo {
     font-weight: 500;
 }
 
-header .coloured {
+header .coloured, .about .coloured {
     color: #8aceb5;
 }
 
@@ -74,3 +75,69 @@ nav a {
     font-weight: 500;
 }
 
+/* section 1 - about company */
+
+.about {
+    width: 100%;
+    height: 500px;
+    background-image: linear-gradient(to bottom, rgb(254, 254, 254), rgb(191, 193, 193));
+}
+
+.about .container {
+    height: 350px;
+}
+
+.arrow {
+    color: #8aceb5;
+    font-size: 80px;
+    width: 10%;
+    height: 100%;
+    display: block;
+    float: left;
+    border: 1px red solid;
+    text-align: center;
+}
+
+.chair {
+    background: url("../images/black_chair.png") no-repeat center/cover;
+    width: 35%;
+    height: 100%;
+    border: red 1px solid;
+    float: left;
+}
+
+.about__description {
+    width: 45%;
+    height: 100%;
+    border: red 1px solid;
+    float: left;
+    padding-top: 50px;
+}
+
+.about__description h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about__description p {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.about__description .button {
+    background-color: #8aceb5;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.about__description .button a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 25px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
