@@ -405,7 +405,20 @@ nav a {
 
 .contactForm {
     width: 100%;
-    height: 600px;
+    height: 500px;
+}
+
+.contactForm__left {
+    width: 70%;
+}
+
+.contactForm__right {
+    width: 30%;
+
+}
+
+form>div {
+    float: left;
 }
 
 form input {
@@ -430,6 +443,49 @@ form textarea {
     padding-top: 11px;
 }
 
+.contactForm__form--chair {
+    background: url("../images/red_chair.png") no-repeat center/contain;
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+}
+
+.contactForm__right input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.contactForm__right .checkmark {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: url("../images/form_ok.jpg") no-repeat;
+    border: 1px solid #8aceb5;
+}
+
+.contactForm__right .consent {
+    font-size: 15px;
+    color: gray;
+    display: inline-block;
+    width: 240px;
+    margin-top: -5px;
+    border: 1px red solid;
+}
+
+form input[type="submit"] {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 25px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    background-color: #8aceb5;
+    border-radius: 15px;
+    width: 300px;
+    margin-top: 30px;
+}
 
 /* footer */
 

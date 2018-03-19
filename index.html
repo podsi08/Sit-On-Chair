@@ -70,7 +70,7 @@
 
 
     <section class="listOfPrices">
-        <div class="container .clearfix">
+        <div class="container clearfix">
             <div class="title">cennik</div>
 
             <div class="listOfPrices__box colorBox1">
@@ -144,17 +144,34 @@
     <section class="contactForm">
         <div class="container">
             <div class="title">kontakt</div>
-            <div class="contactForm__form">
+            <div class="contactForm__form clearfix">
                 <form>
-                    <label>
-                        <input type="text" name="name" placeholder="Imię">
-                    </label>
-                    <label>
-                        <input type="email" name="email" placeholder="email">
-                    </label>
-                    <label>
-                        <textarea name="message" placeholder="Wiadomość"></textarea>
-                    </label>
+
+                    <div class="contactForm__left">
+                        <label>
+                            <input type="text" name="name" placeholder="Imię">
+                        </label>
+                        <label>
+                            <input type="email" name="email" placeholder="email">
+                        </label>
+                        <label>
+                            <textarea name="message" placeholder="Wiadomość"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="contactForm__right">
+                        <div class="contactForm__form--chair">
+                        </div>
+                        <label>
+                            <input type="checkbox" name="personal_data" checked>
+                            <span class="checkmark"></span>
+                            <span class="consent">Zgadzam się na przetwarzanie danych osobowych</span>
+                        </label>
+                        <label>
+                            <input type="submit" value="wyślij">
+                        </label>
+                    </div>
+
                 </form>
             </div>
         </div>
