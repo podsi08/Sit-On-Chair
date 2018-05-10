@@ -1,3 +1,5 @@
 .idea/
 fonts/raleway
 fonts/webfontkit-20180302-094714
+node_modules
+package-lock.json
