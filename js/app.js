@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
     droppable.addEventListener("mouseout", toggleMenu);
 
 
+    //hamburger menu
+    var hamburgerIcon = document.querySelector('.hamburger');
+    var menu = document.querySelector('.menu');
+
+    hamburgerIcon.addEventListener("click", function() {
+        if (menu.style.display === "block") {
+            menu.style.display = 'none';
+        } else {
+            menu.style.display = 'block';
+        }
+    });
+
     //chowanie opisu zdjęć
 
     var photosBox = document.querySelectorAll(".photos__box");
