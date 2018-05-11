@@ -1,0 +1,231 @@
+@import "../partials/colors";
+
+.listOfPrices {
+	height: auto;
+	width: 100%;
+	background-color: #f0f0f0;
+	padding-bottom: 25px;
+	padding-top: 15px;
+	.container {
+		.title {
+			text-transform: uppercase;
+			color: $gray_color;
+			font-size: 22px;
+			padding-top: 20px;
+			margin-left: 15px;
+			&::after {
+				content: attr(div);
+				max-width: 300px;
+				height: 7px;
+				display: block;
+				background-color: $main_color;
+			}
+		}
+		.listOfPrices__container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.listOfPrices__box {
+				width: 300px;
+				height: 350px;
+				position: relative;
+				vertical-align: top;
+				margin: 50px 15px 0 15px;
+				.circle1 {
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					position: absolute;
+					left: 50%;
+					margin-left: -20px;
+					top: -30px ;
+					.circle2 {
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						position: absolute;
+						left: 25%;
+						top: 25%;
+					}
+				}
+				.plan {
+					font-size: 20px;
+					text-align: center;
+					text-transform: uppercase;
+					padding-top: 20px;
+				}
+				.bigCircle {
+					width: 90px;
+					height: 90px;
+					border-radius: 50%;
+					position: absolute;
+					top: 15%;
+					left: 50%;
+					margin-left: -45px;
+					.price {
+						position: absolute;
+						text-align: center;
+						top: 20%;
+						left: 15%;
+						.value {
+							font-size: 30px;
+							font-weight: bold;
+							.upper {
+								font-size: 12px;
+								position: relative;
+								bottom: 20px;
+							}
+						}
+						.cashPerMonth {
+							text-transform: uppercase;
+							font-size: 15px;
+						}
+					}
+				}
+				ul {
+					list-style: none;
+					width: 100%;
+					position: absolute;
+					top: 48%;
+					font-size: 18px;
+					line-height: 25px;
+					text-align: center;
+					color: gray;
+					li:nth-child(2n) {
+						background-color: $whity;
+					}
+				}
+				.listOfPrices__button {
+					width: 150px;
+					border-radius: 5px;
+					font-size: 18px;
+					position: absolute;
+					top: 85%;
+					left: 50%;
+					margin-left: -75px;
+					text-transform: uppercase;
+					text-align: center;
+					line-height: 25px;
+					cursor: pointer;
+				}
+
+			}
+			.colorBox1 {
+				border: $light_gray 1px solid;
+				background-color: white;
+				.circle1 {
+					border: 1px solid $light_gray;
+					background-color: white;
+					.circle2 {
+						background-color: $light_gray;
+					}
+				}
+				.plan {
+					color: $main_color;
+				}
+				.bigCircle {
+					border: 1px solid $light_gray;
+					color: $light_gray;
+				}
+				ul {
+					li:nth-child(2n + 1) {
+						background-color: $lighter_gray;
+					}
+				}
+				.listOfPrices__button {
+					background-color: $main_color;
+					color: white;
+				}
+
+			}
+			.colorBox2 {
+				border: $main_color 1px solid;
+				background-color: $main_color;
+				.circle1 {
+					background-color: $main_color;
+					.circle2 {
+						background-color: white;
+					}
+				}
+				.plan {
+					color: white;
+				}
+				.bigCircle {
+					color: $main_color;
+					background-color: white;
+				}
+				ul {
+					li:nth-child(2n + 1) {
+						background-color: white;
+					}
+				}
+				.listOfPrices__button {
+					background-color: white;
+					color: $main_color;
+				}
+			}
+		}
+
+	}
+}
+
+
+@media only screen and (min-width: 659px) {
+	.listOfPrices {
+		.container {
+			.title {
+				font-size: 22px;
+			}
+			.listOfPrices__container {
+				.listOfPrices__box {
+					height: 500px;
+					.circle1 {
+						width: 50px;
+						height: 50px;
+						margin-left: -25px;
+						top: -38px ;
+						.circle2 {
+							width: 25px;
+							height: 25px;
+						}
+					}
+					.plan {
+						font-size: 22px;
+						padding-top: 30px;
+					}
+					.bigCircle {
+						width: 120px;
+						height: 120px;
+						margin-left: -60px;
+						.price {
+							top: 20%;
+							left: 18%;
+							.value {
+								font-size: 40px;
+								.upper {
+									font-size: 15px;
+									bottom: 25px;
+								}
+							}
+							.cashPerMonth {
+								font-size: 18px;
+							}
+						}
+					}
+					ul {
+						top: 50%;
+						font-size: 20px;
+						line-height: 30px;
+					}
+					.listOfPrices__button {
+						width: 150px;
+						font-size: 20px;
+						line-height: 30px;
+					}
+
+				}
+			}
+
+		}
+	}
+}

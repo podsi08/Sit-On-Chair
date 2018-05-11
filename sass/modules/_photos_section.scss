@@ -1,3 +1,5 @@
+@import "../partials/colors";
+
 .photos {
 	width: 100%;
 	height: auto;
@@ -14,7 +16,7 @@
 			height: 225px;
 			margin: 20px 10px;
 			background: no-repeat;
-			border: 1px gainsboro solid;
+			border: 1px $light_color solid;
 			vertical-align: top;
 			.photos__description {
 				background-color: rgba(238, 238, 238, 0.4);
@@ -35,7 +37,7 @@
 			height: 250px;
 			margin: 20px 10px;
 			vertical-align: top;
-			border: 1px gainsboro solid;
+			border: 1px $light_color solid;
 			.photos__description {
 				padding: 10px 0 20px 10px;
 				font-weight: bolder;
