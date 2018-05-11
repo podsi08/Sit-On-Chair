@@ -1,5 +1,6 @@
 @import "modules/header";
 @import "modules/about_section";
+@import "modules/photos_section";
 @import "partials/fonts";
 @import "partials/colors";
 
@@ -8,17 +9,30 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Raleway, sans-serif;
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
+	body {
+		min-width: 250px;
+		.container {
+			max-width: 1000px;
+			margin: 0 auto;
+
+		}
+		.clearfix::after {
+			display: block;
+			content: "";
+			clear: both;
+		}
 	}
-	.clearfix::after {
-		display: block;
-		content: "";
-		clear: both;
-	}
+
 }
 
 .coloured {
 	color: $main_color;
+}
+
+.photos__description::after {
+	content: attr(div);
+	width: 150px;
+	height: 7px;
+	display: block;
+	background-color: #0acdab;
 }
