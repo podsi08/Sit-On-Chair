@@ -1,5 +1,7 @@
 @import "modules/header";
+@import "modules/about_section";
 @import "partials/fonts";
+@import "partials/colors";
 
 * {
 	margin: 0;
@@ -10,4 +12,13 @@
 		max-width: 1000px;
 		margin: 0 auto;
 	}
+	.clearfix::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+
+.coloured {
+	color: $main_color;
 }
