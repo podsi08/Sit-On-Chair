@@ -1,0 +1,139 @@
+@import "../partials/colors";
+@import "../partials/fonts";
+
+.contactForm {
+	width: 100%;
+	height: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	.container {
+		.contactForm__form {
+			form{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				.contactForm__left {
+					width: 100%;
+					input {
+						height: 50px;
+						width: 90%;
+						display: block;
+						border: 1px solid #0acdab;
+						margin-bottom: 15px;
+					}
+					textarea {
+						width: 90%;
+						height: 200px;
+						resize: none;
+						border: 1px solid #0acdab;
+					}
+					::placeholder {
+						font-size: 28px;
+						color: gainsboro;
+						padding-left: 7px;
+						padding-top: 11px;
+					}
+				}
+				.contactForm__right {
+					width: 100%;
+					.contactForm__form--chair {
+						background: url("../images/red_chair.png") no-repeat center/contain;
+						width: 200px;
+						height: 200px;
+						margin-left: 50px;
+					}
+					input[type="checkbox"] {
+						position: absolute;
+						opacity: 0;
+						cursor: pointer;
+					}
+					.checkmark {
+						height: 35px;
+						width: 35px;
+						border: 1px solid #0acdab;
+						display: inline-block;
+					}
+					input:checked ~ .checkmark {
+						background: url("../images/form_ok.jpg") no-repeat center/contain;
+					}
+					.consent {
+						font-size: 15px;
+						color: gray;
+						display: inline-block;
+						width: 240px;
+						vertical-align: top;
+					}
+					input[type="submit"] {
+						text-transform: uppercase;
+						color: white;
+						font-size: 25px;
+						line-height: 50px;
+						display: block;
+						text-align: center;
+						background-color: #0acdab;
+						border-radius: 8px;
+						width: 300px;
+						margin-top: 30px;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 650px){
+	.contactForm {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		.container {
+			.contactForm__form {
+				form{
+					justify-content: space-around;
+					.contactForm__left {
+						width: 65%;
+						input {
+							height: 50px;
+							width: 90%;
+							margin-bottom: 15px;
+						}
+						textarea {
+							width: 90%;
+							height: 200px;
+						}
+						::placeholder {
+							font-size: 28px;
+							padding-left: 7px;
+							padding-top: 11px;
+						}
+					}
+					.contactForm__right {
+						width: 30%;
+						.contactForm__form--chair {
+							width: 200px;
+							height: 200px;
+							margin-left: 50px;
+						}
+						.checkmark {
+							height: 35px;
+							width: 35px;
+						}
+						.consent {
+							font-size: 15px;
+							width: 240px;
+							vertical-align: top;
+						}
+						input[type="submit"] {
+							font-size: 25px;
+							line-height: 50px;
+							width: 300px;
+							margin-top: 30px;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}

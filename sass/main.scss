@@ -3,6 +3,7 @@
 @import "modules/photos_section";
 @import "modules/prices_section";
 @import "modules/_application_section.scss";
+@import "modules/contact_form_section";
 @import "partials/fonts";
 @import "partials/colors";
 
@@ -29,4 +30,19 @@
 
 .coloured {
 	color: $main_color;
+}
+
+.title {
+	text-transform: uppercase;
+	color: $gray_color;
+	font-size: 22px;
+	padding-top: 20px;
+	margin-left: 15px;
+	&::after {
+		content: attr(div);
+		max-width: 300px;
+		height: 7px;
+		display: block;
+		background-color: $main_color;
+	}
 }

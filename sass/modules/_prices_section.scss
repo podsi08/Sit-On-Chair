@@ -7,20 +7,6 @@
 	padding-bottom: 25px;
 	padding-top: 15px;
 	.container {
-		.title {
-			text-transform: uppercase;
-			color: $gray_color;
-			font-size: 22px;
-			padding-top: 20px;
-			margin-left: 15px;
-			&::after {
-				content: attr(div);
-				max-width: 300px;
-				height: 7px;
-				display: block;
-				background-color: $main_color;
-			}
-		}
 		.listOfPrices__container {
 			display: flex;
 			flex-wrap: wrap;
