@@ -1,5 +1,14 @@
 @import "../partials/colors";
 
+%photos_description_after {
+	content: attr(div);
+	width: 150px;
+	height: 7px;
+	display: block;
+	background-color: $main_color;
+}
+
+
 .photos {
 	width: 100%;
 	height: auto;
@@ -22,6 +31,10 @@
 				background-color: rgba(238, 238, 238, 0.4);
 				margin-top: 150px;
 				padding: 10px 0 10px 10px;
+				font-weight: bolder;
+				&::after {
+					@extend %photos_description_after;
+				}
 				span {
 					text-transform: uppercase;
 				}
@@ -41,6 +54,9 @@
 			.photos__description {
 				padding: 10px 0 20px 10px;
 				font-weight: bolder;
+				&::after {
+					@extend %photos_description_after;
+				}
 			}
 		}
 	}
@@ -50,3 +66,5 @@
 		padding: 0 10px;
 	}
 }
+
+

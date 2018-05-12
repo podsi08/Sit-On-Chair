@@ -2,6 +2,7 @@
 @import "modules/about_section";
 @import "modules/photos_section";
 @import "modules/prices_section";
+@import "modules/_application_section.scss";
 @import "partials/fonts";
 @import "partials/colors";
 
@@ -28,12 +29,4 @@
 
 .coloured {
 	color: $main_color;
-}
-
-.photos__description::after {
-	content: attr(div);
-	width: 150px;
-	height: 7px;
-	display: block;
-	background-color: #0acdab;
 }

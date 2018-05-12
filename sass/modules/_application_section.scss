@@ -1,0 +1,473 @@
+@import "../partials/colors";
+@import "../partials/fonts";
+
+%header {
+	padding-right: 15px;
+	padding-left: 15px;
+	h3 {
+		color: #575757;
+		font-size: 18px;
+	}
+	.green_bell {
+		background-color: $main_color;
+		width: 200px;
+		height: 6px;
+		display: inline-block;
+		margin: 5px 0 5px 0;
+	}
+}
+
+%h4_summary {
+	color: $main_color;
+	font-size: 23px;
+	height: 30px;
+}
+
+.application {
+	background-color: #f9f9f9;
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		.choice_part {
+			width: 100%;
+			.application__header {
+				@extend %header;
+			}
+			.form {
+				display: block;
+				width: 90%;
+				max-width: 280px;
+				height: 280px;
+				margin: auto;
+				.drop_down_list {
+					border:1px solid $main_color;
+					background-color: white;
+					margin-top:22px;
+					padding: 8px 12px;
+					position: relative;
+					.list_label {
+						font-size: 20px;
+						color: $lighter_gray;
+						font-family: 'ralewaylight', Arial, Tahoma, sans-serif;
+					}
+					.list_arrow {
+						width: 0;
+						height: 0;
+						border-left: 12px solid transparent;
+						border-right: 12px solid transparent;
+						border-top: 12px solid $main_color;
+						display:block;
+						position: absolute;
+						right: 14px;
+						top: 15px;
+						cursor: pointer;
+					}
+					.list_panel {
+						background-color: white;
+						border: 1px solid #ccc;
+						width: 278px;
+						padding-left: 15px;
+						padding-bottom: 10px;
+						list-style: none;
+						margin: 0;
+						left: 0;
+						z-index: 2;
+						position: absolute;
+						top: 39px;
+						display: none;
+						li {
+							margin-top:10px;
+							cursor: pointer;
+							color: #585858;
+						}
+					}
+				}
+				.checkbox {
+					position: relative;
+					padding: 30px 30px 30px 0;
+
+					input:checked + label::after {
+						display: block;
+					}
+					input {
+						display: block;
+						opacity: 0;
+						height: 35px;
+						position: absolute;
+						width: 35px;
+						cursor: pointer;
+
+					}
+					label {
+						display: block;
+						padding-left: 45px;
+						position: relative;
+						font-size: 20px;
+						color: #cecece;
+						line-height: 120%;
+						padding-top: 6px;
+						cursor: pointer;
+						&::before, &::after {
+							border: 1px solid $main_color;
+							content: "";
+							display: block;
+							left: 0;
+							height: 35px;
+							position: absolute;
+							width: 35px;
+							top: 0;
+						}
+						&::after {
+							background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20preserveAspectRatio%3D%22xMidYMid%22%20width%3D%2233.875%22%20height%3D%2233%22%20viewBox%3D%220%200%2033.875%2033%22%3E%0A%20%20%3Cpath%20d%3D%22M9.470%2C15.209%20L14.061%2C24.104%20C14.061%2C24.104%2021.522%2C6.026%2033.287%2C-0.000%20C33.000%2C4.304%2031.852%2C8.035%2033.861%2C12.626%20C28.696%2C13.774%2018.078%2C26.687%2014.635%2C33.000%20C9.756%2C26.974%204.017%2C22.382%20-0.000%2C20.948%20L9.470%2C15.209%20Z%22%20fill%3D%22%2327c7ab%22/%3E%0A%3C/svg%3E%0A") no-repeat center;
+							border: 0;
+							display: none;
+						}
+					}
+				}
+			}
+			.image_part {
+				width: 0;
+				display: none;
+			}
+		}
+		.summary_part {
+			width: 100%;
+			margin: auto;
+			.application__header {
+				@extend %header;
+				margin-bottom: 30px;
+			}
+			.align_right{
+				text-align: right;
+			}
+			.summary_panel {
+				background-color: white;
+				width: 90%;
+				max-width:310px;
+				height:195px;
+				padding:10px;
+				margin: auto;
+				.panel_left {
+					display: inline-block;
+					width: 185px;
+					vertical-align: top;
+					padding-bottom:10px;
+					border-bottom:1px solid #e7e7e7;
+					height: 145px;
+					h4 {
+						@extend %h4_summary;
+					}
+					span {
+						margin-top:10px;
+						font-size: 18px;
+						color: #5b5a5a;
+						display: block;
+					}
+				}
+				.panel_right {
+					display: inline-block;
+					width: 100px;
+					border-left:1px solid #e7e7e7;
+					text-align: right;
+					vertical-align: top;
+					padding-bottom:10px;
+					border-bottom:1px solid #e7e7e7;
+					height: 145px;
+					h4 {
+						@extend %h4_summary;
+					}
+					span {
+						display: block;
+						font-size: 22px;
+						color: $main_color;
+						margin-top:10px;
+					}
+				}
+				.sum_label {
+					display: inline-block;
+					width: 185px;
+					margin-top: 10px;
+					font-size: 18px;
+					color: $gray_color;
+				}
+				.sum {
+					display: inline-block;
+					width: 100px;
+					text-align: right;
+					margin-top: 10px;
+					font-size: 22px;
+					color: $main_color;
+				}
+			}
+			.green_button {
+				background-color: $main_color;
+				color: white;
+				text-align:center;
+				text-transform: uppercase;
+				width: 200px;
+				padding: 5px 25px;
+				font-size: 20px;
+				display: block;
+				font-family: 'ralewaymedium', Arial, Tahoma, sans-serif;
+				margin: 30px auto;
+				border-radius: 8px;
+				text-decoration: none;
+			}
+		}
+
+	}
+}
+
+
+
+
+
+@media only screen and (min-width: 650px) and (max-width: 950px){
+	.application {
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			.choice_part {
+				width: 50%;
+				margin: auto;
+				.form {
+					width: 300px;
+					height: 400px;
+					padding-left: 15px;
+					padding-right: 15px;
+					.drop_down_list {
+						width: 280px;
+						margin-top:22px;
+						padding: 8px 12px;
+						.list_label {
+							font-size: 25px;
+						}
+						.list_arrow {
+							width: 0;
+							height: 0;
+							border-left: 13px solid transparent;
+							border-right: 13px solid transparent;
+							border-top: 13px solid $main_color;
+							right: 14px;
+							top: 20px;
+						}
+						.list_panel {
+							width: 278px;
+							padding-left: 15px;
+							padding-bottom: 10px;
+							margin: 0;
+							left: 0;
+							z-index: 2;
+							top: 44px;
+							li {
+								margin-top:10px;
+							}
+						}
+					}
+					.checkbox {
+						padding: 30px 30px 30px 0;
+						input {
+							height: 40px;
+							width: 40px;
+						}
+						label {
+							padding-left: 60px;
+							font-size: 25px;
+							line-height: 120%;
+							padding-top: 6px;
+							&::before, &::after {
+								height: 40px;
+								width: 40px;
+
+							}
+						}
+					}
+				}
+				.image_part {
+					display: none;
+					width: 0;
+				}
+			}
+			.summary_part {
+				margin: 0;
+				width: 50%;
+				height: 400px;
+				.application__header {
+					margin-top: 0;
+				}
+				.summary_panel {
+					width:310px;
+					height:195px;
+					padding:10px;
+					margin-top: 20px;
+					.panel_left {
+						width: 185px;
+						padding-bottom:10px;
+						height: 145px;
+						span {
+							margin-top:10px;
+							font-size: 22px;
+						}
+					}
+					.panel_right {
+						width: 100px;
+						padding-bottom:10px;
+						height: 145px;
+						span {
+							font-size: 22px;
+							margin-top:10px;
+						}
+					}
+					.sum_label {
+						width: 185px;
+						margin-top: 10px;
+						font-size: 22px;
+					}
+					.sum {
+						width: 100px;
+						margin-top: 10px;
+						font-size: 22px;
+					}
+				}
+				.green_button {
+					width: 200px;
+					padding: 7px 30px;
+					font-size: 22px;
+					margin: 15px auto;
+				}
+			}
+
+		}
+	}
+}
+
+
+@media only screen and (min-width: 951px){
+	.application {
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			.choice_part {
+				width: 65%;
+				.form {
+					width: 300px;
+					height: 400px;
+					padding-left: 15px;
+					padding-right: 15px;
+					display: inline-block;
+					.drop_down_list {
+						width: 320px;
+						margin-top:22px;
+						padding: 8px 12px;
+						.list_label {
+							font-size: 30px;
+						}
+						.list_arrow {
+							width: 0;
+							height: 0;
+							border-left: 15px solid transparent;
+							border-right: 15px solid transparent;
+							border-top: 15px solid $main_color;
+							right: 14px;
+							top: 20px;
+						}
+						.list_panel {
+							width: 318px;
+							padding-left: 15px;
+							padding-bottom: 10px;
+							margin: 0;
+							left: 0;
+							z-index: 2;
+							top: 54px;
+							li {
+								margin-top:10px;
+							}
+						}
+					}
+					.checkbox {
+						padding: 30px 30px 30px 0;
+						input {
+							height: 48px;
+							width: 48px;
+						}
+						label {
+							padding-left: 65px;
+							font-size: 28px;
+							line-height: 120%;
+							padding-top: 10px;
+							&::before, &::after {
+								height: 48px;
+								width: 48px;
+
+							}
+						}
+					}
+				}
+				.image_part {
+					width: 50%;
+					height: 200px;
+					display: inline-block;
+					img {
+						width: 80%;
+						height: auto;
+						margin-left: 60px;
+						margin-bottom: 50px;
+					}
+				}
+			}
+			.summary_part {
+				margin: 0;
+				width: 35%;
+				.summary_panel {
+					width:310px;
+					height:195px;
+					padding:10px;
+					margin-top: 25px;
+					.panel_left {
+						width: 185px;
+						padding-bottom:10px;
+						height: 145px;
+						span {
+							margin-top:10px;
+							font-size: 22px;
+						}
+					}
+					.panel_right {
+						width: 100px;
+						padding-bottom:10px;
+						height: 145px;
+						span {
+							font-size: 22px;
+							margin-top:10px;
+						}
+					}
+					.sum_label {
+						width: 185px;
+						margin-top: 10px;
+						font-size: 22px;
+					}
+					.sum {
+						width: 100px;
+						margin-top: 10px;
+						font-size: 22px;
+					}
+				}
+				.green_button {
+					width: 200px;
+					padding: 10px 30px;
+					font-size: 24px;
+					margin: 40px auto;
+				}
+			}
+
+		}
+	}
+}
