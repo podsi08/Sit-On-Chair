@@ -22,8 +22,8 @@
                             <li><a href="#">Historia</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">galeria</a></li>
-                    <li><a href="#">kontakt</a></li>
+                    <li><a href="#gallery">galeria</a></li>
+                    <li><a href="#contact">kontakt</a></li>
                 </ul>
             </nav>
         </div>
@@ -61,7 +61,7 @@
     </section>
 
 
-    <section class="photos">
+    <section class="photos" id="gallery">
         <div class="container">
             <div class="photos__box">
                 <div class="photos__description">
@@ -173,8 +173,10 @@
 
                 <div class="form">
                     <div class="drop_down_list choose_type">
-                        <span class="list_label">Wybierz rodzaj</span>
-                        <span class="list_arrow"></span>
+                        <div>
+                            <span class="list_label">Wybierz rodzaj</span>
+                            <span class="list_arrow"></span>
+                        </div>
                         <ul class="list_panel">
                             <li data-chair-price="250">Clair</li>
                             <li data-chair-price="280">Margarita</li>
@@ -182,8 +184,10 @@
                         </ul>
                     </div>
                     <div class="drop_down_list choose_color">
-                        <span class="list_label">Wybierz kolor</span>
-                        <span class="list_arrow"></span>
+                        <div>
+                            <span class="list_label">Wybierz kolor</span>
+                            <span class="list_arrow"></span>
+                        </div>
                         <ul class="list_panel">
                             <li>Czerwony</li>
                             <li>Czarny</li>
@@ -191,8 +195,10 @@
                         </ul>
                     </div>
                     <div class="drop_down_list choose_material">
-                        <span class="list_label">Wybierz materiał</span>
-                        <span class="list_arrow"></span>
+                        <div>
+                            <span class="list_label">Wybierz materiał</span>
+                            <span class="list_arrow"></span>
+                        </div>
                         <ul class="list_panel">
                             <li data-material-price="0">Tkanina</li>
                             <li data-material-price="120">Skóra</li>
@@ -238,7 +244,7 @@
     </section>
 
 
-    <section class="contactForm">
+    <section class="contactForm" id="contact">
         <div class="container">
             <div class="title">kontakt</div>
             <div class="contactForm__form clearfix">

@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //listy drop-down
 
-    var listArrows = document.querySelectorAll(".list_arrow");
+    var selects = document.querySelectorAll(".drop_down_list div");
 
-    listArrows.forEach(function(arrow){
-        arrow.addEventListener("click", function() {
+    selects.forEach(function(select){
+        select.addEventListener("click", function() {
             var listPanel = this.nextElementSibling;
 
             if(listPanel.style.display === "none" || listPanel.style.display === "") {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //schowanie listy drop-down
             this.parentElement.style.display = "none";
             //wyświetlenie w polu wyboru, wybranego typu
-            this.parentElement.previousElementSibling.previousElementSibling.innerText = this.innerText;
+            this.parentElement.previousElementSibling.firstElementChild.innerText = this.innerText;
             //wpisanie ceny do tabeli
             summaryTypeValue.innerText = this.dataset.chairPrice;
             //przeliczenie sumy
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         color.addEventListener("click", function(){
             summaryColor.innerText = this.innerText;
             this.parentElement.style.display = "none";
-            this.parentElement.previousElementSibling.previousElementSibling.innerText = this.innerText;
+            this.parentElement.previousElementSibling.firstElementChild.innerText = this.innerText;
             summaryColorValue.innerHTML = "-";
         });
     });
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type.addEventListener("click", function() {
             summaryMaterial.innerText = this.innerText;
             this.parentElement.style.display = "none";
-            this.parentElement.previousElementSibling.previousElementSibling.innerText = this.innerText;
+            this.parentElement.previousElementSibling.firstElementChild.innerText = this.innerText;
             summaryMaterialValue.innerText = this.dataset.materialPrice;
             summarySum.innerText = getSum();
         });
