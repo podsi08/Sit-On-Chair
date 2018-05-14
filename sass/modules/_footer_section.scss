@@ -1,0 +1,72 @@
+footer {
+	width: 100%;
+	margin-bottom: 30px;
+	.container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.copy{
+			width: 100%;
+			min-width: 350px;
+			color: gray;
+			font-size: 14px;
+			text-transform: capitalize;
+			line-height: 30px;
+			padding-left: 10px;
+		}
+		.footer__logos {
+			width: 100%;
+			min-width: 270px;
+			.links {
+				min-width: 143px;
+				li {
+					list-style: none;
+					float:left;
+					margin-right: 5px;
+					#flickr {
+						background-image: url("../images/flickr.png");
+					}
+					#vimeo {
+						background-image: url("../images/vimeo.png");
+					}
+					#pinterest {
+						background-image: url("../images/pinterest.png");
+					}
+					#twitter {
+						background-image: url("../images/twitter.png");
+					}
+					div {
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background: no-repeat center/cover;
+					}
+				}
+			}
+			.logo {
+				min-width: 120px;
+				text-align: right;
+				color: gray;
+				text-transform: uppercase;
+				line-height: 30px;
+				float: right;
+				padding-right: 10px;
+			}
+		}
+
+	}
+}
+
+@media only screen and (min-width: 630px){
+	footer {
+		.container{
+			.copy{
+				width: 50%;
+			}
+			.footer__logos {
+				width: 30%;
+			}
+
+		}
+	}
+}
