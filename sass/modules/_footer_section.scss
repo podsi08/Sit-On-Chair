@@ -1,6 +1,5 @@
 footer {
 	width: 100%;
-	margin-bottom: 30px;
 	.container{
 		display: flex;
 		flex-wrap: wrap;
@@ -13,12 +12,15 @@ footer {
 			text-transform: capitalize;
 			line-height: 30px;
 			padding-left: 10px;
+
 		}
 		.footer__logos {
 			width: 100%;
 			min-width: 270px;
+			margin-bottom: 5px;
 			.links {
 				min-width: 143px;
+				margin-left: 10px;
 				li {
 					list-style: none;
 					float:left;

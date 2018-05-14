@@ -43,34 +43,39 @@
 					}
 				}
 				.contactForm__right {
-					width: 50%;
+					width: 100%;
 					.contactForm__form--chair {
 						background: url("../images/red_chair.png") no-repeat center/contain;
 						width: 200px;
 						height: 200px;
+						margin: auto;
+					}
+					.contactForm__form--checkbox {
+						margin: auto;
+						width: 280px;
+						input[type="checkbox"] {
+							position: absolute;
+							opacity: 0;
+							cursor: pointer;
+						}
+						.checkmark {
+							height: 35px;
+							width: 35px;
+							border: 1px solid #0acdab;
+							display: inline-block;
+						}
+						input:checked ~ .checkmark {
+							background: url("../images/form_ok.jpg") no-repeat center/contain;
+						}
+						.consent {
+							font-size: 15px;
+							color: gray;
+							display: inline-block;
+							max-width: 240px;
+							vertical-align: top;
+						}
+					}
 
-					}
-					input[type="checkbox"] {
-						position: absolute;
-						opacity: 0;
-						cursor: pointer;
-					}
-					.checkmark {
-						height: 35px;
-						width: 35px;
-						border: 1px solid #0acdab;
-						display: inline-block;
-					}
-					input:checked ~ .checkmark {
-						background: url("../images/form_ok.jpg") no-repeat center/contain;
-					}
-					.consent {
-						font-size: 15px;
-						color: gray;
-						display: inline-block;
-						width: 240px;
-						vertical-align: top;
-					}
 					input[type="submit"] {
 						text-transform: uppercase;
 						color: white;
@@ -82,7 +87,7 @@
 						border-radius: 8px;
 						width: 100%;
 						max-width: 300px;
-						margin-top: 30px;
+						margin: 30px auto;
 						cursor: pointer;
 						border: 1px solid $main_color;
 						box-shadow: none;
@@ -126,20 +131,23 @@
 							height: 200px;
 							margin-left: 3vw;
 						}
-						.checkmark {
-							height: 35px;
-							width: 35px;
-						}
-						.consent {
-							font-size: 15px;
-							width: 240px;
-							vertical-align: top;
+						.contactForm__form--checkbox {
+							margin: 0;
+							.checkmark {
+								height: 35px;
+								width: 35px;
+							}
+							.consent {
+								font-size: 15px;
+								width: 240px;
+								vertical-align: top;
+							}
 						}
 						input[type="submit"] {
 							font-size: 25px;
 							line-height: 50px;
 							width: 80%;
-							margin-top: 30px;
+							margin: 30px 0;
 
 						}
 					}
