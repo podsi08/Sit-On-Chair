@@ -76,6 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
         photosLi[counter].classList.add("visible");
     });
 
+    //prices section
+
+    var priceBox = document.querySelectorAll(".listOfPrices__box");
+
+    priceBox.forEach(function(box){
+        box.addEventListener("mouseover", function() {
+            this.style.border = "rgba(0, 176, 255, 0.67) 3px solid ";
+        })
+    });
+
+    priceBox.forEach(function(box){
+        box.addEventListener("mouseout", function() {
+            this.style.border = "#c0c0c0 1px solid"
+        })
+    });
+
 
     //listy drop-down
 
