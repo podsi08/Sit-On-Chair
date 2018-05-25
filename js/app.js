@@ -208,16 +208,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function elementYPosition(elementId) {
         var element = document.getElementById(elementId);
-        return element.offsetTop;
-        // yPosition = element.offsetTop
-        // var node = element;
-        // console.log(node.offsetParent, yPosition);
-        //
-        // //offsetParent return the nearest ancestor of element that has position other than static
-        // while (node.offsetParent && node.offsetParent !== document.body) {
-        //     node = node.offsetParent;
-        //     yPosition += node.offsetTop;
-        // } return yPosition;
+
+        //offsetTop returns the distance of element relative to the top of the offsetParent
+        var yPosition = element.offsetTop;
+
+        //offsetParent return the nearest ancestor of element that has position other than static (if there's not such
+        //element returns document.body).
+        var node = element;
+
+        while (node.offsetParent && node.offsetParent !== document.body) {
+            node = node.offsetParent;
+            yPosition += node.offsetTop;
+        } return yPosition;
 
     }
 
@@ -232,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        var speed = Math.round(distance / 75);
+        var speed = Math.round(distance / 50);
         if (speed >= 20) speed = 20;
 
         var step = Math.round(distance / 25);
@@ -240,9 +242,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var timer = 0;
 
         if (stopY > startY) {
+            //as long as startY is lower than stopY set timeout, add step to leapY(current position between startY and stopY) and increment timer
             for (var i = startY; i < stopY; i+=step) {
+                const currentLeapY = leapY; //I have to declare const, var is a global variable and loop ends faster than first timeout
+
+                //if I would make window.scrollTo(0, leapY), the loop finish faster than first timeout (timeout waits for callback function
+                //window.scrollTo(0, leapY) and in that time loop ends with leapY = stopY (there's no smooth scroll). window.scrollTo(0, leapY)
+                //would be call only once with leapY = stopY
                 setTimeout(function() {
-                    window.scrollTo(0, leapY);
+                    window.scrollTo(0, currentLeapY);
                 },timer * speed);
 
                 leapY += step;
@@ -252,16 +260,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 timer++;
-                console.log('scroll', timer)
+
             } return;
         }
 
-        for (var i = startY; i > stopY; i-=step) {
-            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+        //in case when startY is greater than stopY:
+        for (var j = startY; j > stopY; j-=step) {
+            const currentLeapY = leapY;
+
+            setTimeout(function() {
+                window.scrollTo(0, currentLeapY);
+            },timer * speed);
+
             leapY -= step;
+
             if (leapY < stopY) {
                 leapY = stopY;
             }
+
             timer++;
         }
     }
