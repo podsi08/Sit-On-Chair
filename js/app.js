@@ -190,6 +190,91 @@ document.addEventListener('DOMContentLoaded', function() {
             summaryTransportValue.innerText = "";
         }
         summarySum.innerText = getSum();
+    });
+
+
+    //smooth scroll
+
+    //function that returns current y offset of page
+    function currentYPosition () {
+        //Firefox, Chrome, Opera, Safari
+        if (self.pageYOffset) {
+            return self.pageYOffset;
+        } else {
+            return 0;
+        }
+    }
+
+
+    function elementYPosition(elementId) {
+        var element = document.getElementById(elementId);
+        return element.offsetTop;
+        // yPosition = element.offsetTop
+        // var node = element;
+        // console.log(node.offsetParent, yPosition);
+        //
+        // //offsetParent return the nearest ancestor of element that has position other than static
+        // while (node.offsetParent && node.offsetParent !== document.body) {
+        //     node = node.offsetParent;
+        //     yPosition += node.offsetTop;
+        // } return yPosition;
+
+    }
+
+    function smoothScroll(elementId) {
+        var startY = currentYPosition();
+        var stopY = elementYPosition(elementId);
+        var distance = stopY > startY ? stopY - startY : startY - stopY;
+
+        //if there's a short distance, just scroll down (no smooth scroll)
+        if (distance < 100) {
+            scrollTo(0, stopY);
+            return;
+        }
+
+        var speed = Math.round(distance / 75);
+        if (speed >= 20) speed = 20;
+
+        var step = Math.round(distance / 25);
+        var leapY = stopY > startY ? startY + step : startY - step;
+        var timer = 0;
+
+        if (stopY > startY) {
+            for (var i = startY; i < stopY; i+=step) {
+                setTimeout(function() {
+                    window.scrollTo(0, leapY);
+                },timer * speed);
+
+                leapY += step;
+
+                if (leapY > stopY) {
+                    leapY = stopY;
+                }
+
+                timer++;
+                console.log('scroll', timer)
+            } return;
+        }
+
+        for (var i = startY; i > stopY; i-=step) {
+            setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+            leapY -= step;
+            if (leapY < stopY) {
+                leapY = stopY;
+            }
+            timer++;
+        }
+    }
+
+
+    var galleryLink = document.getElementById('galleryLink');
+    galleryLink.addEventListener("click", function() {
+        smoothScroll('gallery');
+    });
+
+    var contactLink = document.getElementById('contactLink');
+    contactLink.addEventListener("click", function() {
+        smoothScroll('contact');
     })
 
 });
